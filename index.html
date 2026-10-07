@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sea Ice Atlas — An Arctic Data Story</title>
+  <meta name="description" content="An interactive data story about declining Arctic sea ice extent, built from published NSIDC figures from 1979 through 2026.">
+  <meta name="keywords" content="sea ice, Arctic, NSIDC, climate, September, ice extent">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Sea Ice Atlas — An Arctic Data Story">
+  <meta property="og:description" content="From 7.05 to 4.81 million km²: how has September Arctic sea ice changed?">
+  <meta property="og:site_name" content="Sea Ice Atlas">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="/">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Return to the beginning of the Sea Ice Atlas">
+      <span class="wordmark-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span>Sea Ice Atlas</span>
+    </a>
+    <nav aria-label="Story navigation">
+      <a href="#minimum">The moment</a>
+      <a href="#line-story">The path</a>
+      <a href="#decades">The decades</a>
+      <a href="#weather">The impact</a>
+    </nav>
+    <span class="data-stamp">NSIDC · 1979—2026</span>
+  </header>
+
+  <main id="top">
+    <section class="hero story-section" data-section="hero">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> A data story from the Arctic</p>
+        <h1>Water<br><em>remembers.</em></h1>
+        <p class="hero-lead">Each September, the frozen sea contracts to its annual low. The numbers look quiet. But a record spanning nearly half a century traces a transformation we cannot ignore.</p>
+        <a class="scroll-cue" href="#minimum"><span class="scroll-arrow">↓</span><span>Scroll to read the story</span></a>
+      </div>
+      <div class="hero-orbit" aria-hidden="true">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div>
+        <div class="polar-disc"><span>NORTH</span><strong>90°</strong><small>N</small></div>
+        <div class="orbit-note note-a">1979</div><div class="orbit-note note-b">2026</div>
+      </div>
+      <div class="hero-meta"><span>01</span><span>of 04</span></div>
+    </section>
+
+    <section id="minimum" class="story-section minimum-section" data-section="minimum">
+      <div class="section-kicker reveal"><span>01</span><span class="rule"></span><span>The moment</span></div>
+      <div class="minimum-grid">
+        <div class="minimum-text reveal">
+          <p class="eyebrow">September 12, 2026 · Annual minimum</p>
+          <h2>The low is not<br><em>an exception.</em></h2>
+          <p>Scientists at the National Snow and Ice Data Center estimated that Arctic sea ice reached its annual minimum on September 12, 2026.</p>
+          <p class="muted">This daily estimate is rounded as published by NSIDC. The value may shift slightly as the record is reviewed.</p>
+        </div>
+        <div class="minimum-stat reveal">
+          <div class="stat-ring"><span class="ring-label">Extent</span><strong>4.60</strong><span class="ring-unit">million km²</span></div>
+          <div class="stat-caption"><span class="rank-number">10</span><span>10th lowest<br>in the satellite record<br><small>tied with 2008, 2010, and 2025</small></span></div>
+        </div>
+      </div>
+      <div class="context-strip reveal"><span>Far below anything seen in the 1980s, 1990s, and early 2000s</span><span class="context-arrow">←</span><span>The 20 lowest annual minima all fall within the last 20 years</span></div>
+      <div class="hero-meta"><span>02</span><span>of 04</span></div>
+    </section>
+
+    <section id="line-story" class="story-section line-section" data-section="line-story">
+      <div class="section-kicker reveal"><span>02</span><span class="rule"></span><span>The path</span></div>
+      <div class="section-heading reveal">
+        <div><p class="eyebrow">September average extent · million km²</p><h2>From <em>7.05</em> to <em>4.81</em></h2></div>
+        <p>This chart does not capture a single passing day; it shows each year’s September average. Select a point to see the number—and watch the low become the new context.</p>
+      </div>
+      <div class="chart-card reveal">
+        <div class="chart-toolbar"><span class="chart-legend"><i class="legend-dot"></i> September average</span><span class="chart-source">NSIDC Sea Ice Index · v4.0</span></div>
+        <div class="chart-wrap" id="lineChart" role="img" aria-label="Line chart of average September Arctic sea ice extent from 1979 to 2026"></div>
+        <div class="chart-tooltip" id="chartTooltip" aria-hidden="true"><strong></strong><span></span></div>
+        <div class="chart-note"><span>Note</span><p>The published daily minimum for 2026 is 4.60 million km²; 4.81 here is the <strong>September monthly average</strong> in the monthly time series.</p></div>
+      </div>
+      <div class="trend-callout reveal"><strong>−0.74</strong><span>million km² per decade, from a linear trend calculated across September averages from 1979–2026.</span><b>↘</b></div>
+      <div class="hero-meta"><span>03</span><span>of 04</span></div>
+    </section>
+
+    <section id="decades" class="story-section decades-section" data-section="decades">
+      <div class="section-kicker reveal"><span>03</span><span class="rule"></span><span>The decades</span></div>
+      <div class="section-heading reveal"><div><p class="eyebrow">September average, decade by decade</p><h2>Every decade<br><em>lower than the last.</em></h2></div><p>No year is a copy of another. But grouped together, the long-term direction becomes clear—with a reminder that the final period is partial through 2026.</p></div>
+      <div class="decade-visual reveal" id="decadeBars" aria-label="Comparison of September average extent by decade"></div>
+      <div class="decade-detail" id="decadeDetail"><span class="detail-tag">Selected period</span><strong>1979—1988</strong><span>September average</span><b>7.21 <small>million km²</small></b></div>
+      <div class="hero-meta"><span>04</span><span>of 04</span></div>
+    </section>
+
+    <section id="weather" class="story-section weather-section" data-section="weather">
+      <div class="section-kicker reveal"><span>04</span><span class="rule"></span><span>The impact</span></div>
+      <div class="weather-grid">
+        <div class="weather-copy reveal"><p class="eyebrow">The far south is not far away</p><h2>What does<br>absence <em>do to the air?</em></h2><p>Ice is a reflective surface. As it retreats, a dark ocean absorbs more solar energy, then releases extra heat and moisture into the atmosphere—especially in autumn.</p><p>That may reshape the jet stream, helping weather patterns linger or opening routes for cold polar air into the mid-latitudes. But there is no simple equation: the size of this effect remains under study, alongside natural variability and tropical conditions.</p></div>
+        <div class="weather-diagram reveal" aria-label="Diagram linking open ocean, the jet stream, and the mid-latitudes">
+          <div class="latitude lat-one"><span>Arctic</span></div><div class="latitude lat-two"><span>Mid-latitudes</span></div><div class="latitude lat-three"><span>Further south</span></div>
+          <div class="jet-stream"><span>A wavier jet stream</span><i></i><i></i><i></i></div>
+          <div class="heat-arrow">↑ heat and moisture</div><div class="open-water"><span>Open ocean</span></div>
+        </div>
+      </div>
+      <div class="balance-note reveal"><span>A balanced reading</span><p>NSIDC connects ice loss to possible regional mechanisms, while noting that the relationship with mid-latitude weather extremes is unresolved. Ice may amplify an existing pattern more than create one on its own.</p></div>
+    </section>
+
+    <section class="takeaways-section story-section" data-section="takeaways">
+      <div class="section-kicker reveal"><span>Takeaways</span><span class="rule"></span><span>Three things</span></div>
+      <div class="takeaways-heading reveal"><p class="eyebrow">What remains after the numbers?</p><h2>Three<br><em>clear takeaways.</em></h2></div>
+      <div class="takeaways-grid">
+        <article class="takeaway reveal"><span>01</span><h3>The low became a pattern</h3><p>2026 reached the 10th-lowest minimum in the record, and the last 20 years contain the lowest 20 annual minima—the baseline itself is falling.</p></article>
+        <article class="takeaway reveal"><span>02</span><h3>Decades reveal what years hide</h3><p>The September average fell from 7.21 million km² in 1979–1988 to 4.56 million km² in 2019–2026: a loss of about 36.7%.</p></article>
+        <article class="takeaway reveal"><span>03</span><h3>The impact is not a single arrow</h3><p>Less ice means more energy exchange between ocean and air, but translating that into weather farther south depends on many factors and remains an active area of research.</p></article>
+      </div>
+      <div class="closing-line reveal"><span class="closing-mark">✦</span><p>When the ice edge changes, the way we read the North changes—and perhaps what comes next.</p></div>
+    </section>
+
+    <section class="sources-section" id="sources">
+      <div class="sources-inner">
+        <div><p class="eyebrow">Reading the sources</p><h2>The numbers<br><em>have roots.</em></h2></div>
+        <div class="sources-list">
+          <a href="https://nsidc.org/news-analyses/news-stories/arctic-sea-ice-has-reached-minimum-extent-2026-antarctic-sea-ice-maximum-most-likely-reached-well" target="_blank" rel="noreferrer"><span>01</span><div><strong>NSIDC · 2026 minimum extent news</strong><small>4.60 million km² on September 12, 2026 · published September 23, 2026</small></div><b>↗</b></a>
+          <a href="https://noaadata.apps.nsidc.org/NOAA/G02135/north/monthly/data/N_09_extent_v4.0.csv" target="_blank" rel="noreferrer"><span>02</span><div><strong>NSIDC Sea Ice Index v4.0 · September file</strong><small>Monthly average extent from 1979 through 2026 · last updated October 2, 2026</small></div><b>↗</b></a>
+          <a href="https://nsidc.org/data/g02135/versions/4" target="_blank" rel="noreferrer"><span>03</span><div><strong>NSIDC · Sea Ice Index, Version 4</strong><small>Data definition, methodology, and the 1981–2010 reference period</small></div><b>↗</b></a>
+          <a href="https://nsidc.org/learn/ask-scientist/declining-sea-ice-changing-atmosphere" target="_blank" rel="noreferrer"><span>04</span><div><strong>NSIDC · Does ice loss change the weather?</strong><small>Potential mechanisms and the limits of the evidence</small></div><b>↗</b></a>
+        </div>
+      </div>
+      <div class="footer-line"><span>Latest data shown: October 2, 2026</span><span>Extent = ocean area covered by at least 15% ice concentration</span><a href="#top">↑ Top</a></div>
+    </section>
+  </main>
+  <script src="/script.js"></script>
+</body>
+</html>
